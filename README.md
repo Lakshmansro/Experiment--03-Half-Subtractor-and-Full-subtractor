@@ -26,6 +26,7 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
+
 1.	Create a New Project:
 
 Open Quartus and create a new project by selecting "File" > "New Project Wizard."
@@ -49,20 +50,24 @@ Click on "File" > "New" > "Verification/Debugging Files" > "University Program V
 
 ## Program:
 ## Half Subtractor:
+```
 module half_subtractor(a,b,diff,borr);
 input a,b;
 output diff,borr;
 xor(diff,a,b);
 assign borr=~a&b;
 endmodule
+```
 
 ## Full subtractor:
+```
 module full_subtractor(a,b,cout,diff,borr);
 input a,b,cout;
 output diff,borr;
 xor(diff,a,b,cout);
 assign borr=(~a)&cout|b&cout|(~a)&b;
 endmodule
+```
 
 ## Output:
 ## Truthtable
